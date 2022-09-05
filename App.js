@@ -81,20 +81,23 @@ export default function App() {
   }
 
   return (
-    <LinearGradient
-      colors={[Colors.alpha600, Colors.delta500]}
-      style={styles.rootScreen}
-      onLayout={onLayoutRootView}
-    >
-      <ImageBackground
+    <>
+      <StatusBar style="light" />
+      <LinearGradient
+        colors={[Colors.alpha600, Colors.delta500]}
         style={styles.rootScreen}
-        resizeMode="cover"
-        source={require("./assets/images/background.png")}
-        imageStyle={styles.backgroundImage}
+        onLayout={onLayoutRootView}
       >
-        <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
-      </ImageBackground>
-    </LinearGradient>
+        <ImageBackground
+          style={styles.rootScreen}
+          resizeMode="cover"
+          source={require("./assets/images/background.png")}
+          imageStyle={styles.backgroundImage}
+        >
+          <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
+        </ImageBackground>
+      </LinearGradient>
+    </>
   );
 }
 
